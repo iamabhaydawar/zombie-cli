@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "msr"
+version = "0.1.0"
+description = "Model Specialist Router — routes queries to the best narrow AI specialist"
+requires-python = ">=3.12"
+dependencies = [
+    "litellm>=1.40.0",
+    "langgraph>=0.2.0",
+    "typer[all]>=0.12.0",
+    "pydantic>=2.5.0",
+    "pydantic-settings>=2.0.0",
+    "rich>=13.0.0",
+    "python-dotenv>=1.0.0",
+    "httpx>=0.27.0",
+]
+
+[project.scripts]
+msr = "msr.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["msr*"]
