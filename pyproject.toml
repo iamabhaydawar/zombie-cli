@@ -3,9 +3,9 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "msr"
+name = "zombie-cli"
 version = "0.1.0"
-description = "Model Specialist Router — routes queries to the best narrow AI specialist"
+description = "Zombie CLI — routes queries to the best narrow AI specialist"
 requires-python = ">=3.12"
 dependencies = [
     "litellm>=1.40.0",
@@ -19,7 +19,7 @@ dependencies = [
 ]
 
 [project.scripts]
-msr = "msr.cli:app"
+zli = "msr.cli:app"
 
 [tool.setuptools.packages.find]
 where = ["."]

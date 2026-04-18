@@ -92,26 +92,26 @@ You only need the keys for the specialists you want to use. Missing keys trigger
 ## Usage
 
 ```bash
-# Ask anything — MSR handles routing automatically
-msr ask "What is the derivative of f(x) = x³?"
-msr ask "Write a Python function that reverses a linked list"
-msr ask "Is the claim that GPT-5 was released in March 2025 accurate?"
+# Ask anything — zli handles routing automatically
+zli ask "What is the derivative of f(x) = x³?"
+zli ask "Write a Python function that reverses a linked list"
+zli ask "Is the claim that GPT-5 was released in March 2025 accurate?"
 
-# Multi-intent: MSR detects compound requests and parallelises independent subtasks
-msr ask "Summarise this CSV and also fix my Python script" --context-file ./data.csv
+# Multi-intent: zli detects compound requests and parallelises independent subtasks
+zli ask "Summarise this CSV and also fix my Python script" --context-file ./data.csv
 
-# Sequential: MSR detects dependency and chains tasks in order
-msr ask "Clean this CSV then generate a summary report"
+# Sequential: zli detects dependency and chains tasks in order
+zli ask "Clean this CSV then generate a summary report"
 
 # Flags
-msr ask "Explain quantum entanglement" --verbose          # show routing rationale + model trace
-msr ask "Build a JSON schema for a blog post" --dry-run  # plan only, no API calls
-msr ask "Solve this integral" --latency 15000            # custom timeout (ms)
-msr ask "Summarise this paper" --context-file ./paper.pdf
+zli ask "Explain quantum entanglement" --verbose          # show routing rationale + model trace
+zli ask "Build a JSON schema for a blog post" --dry-run  # plan only, no API calls
+zli ask "Solve this integral" --latency 15000            # custom timeout (ms)
+zli ask "Summarise this paper" --context-file ./paper.pdf
 
 # Utilities
-msr config check      # validate all API keys are reachable
-msr models list       # show task_type → model assignments
+zli config check      # validate all API keys are reachable
+zli models list       # show task_type → model assignments
 ```
 
 ---
