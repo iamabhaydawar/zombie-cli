@@ -19,8 +19,8 @@ dependencies = [
 ]
 
 [project.scripts]
-zli = "msr.cli:app"
+zli = "zli.cli:app"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["msr*"]
+include = ["zli*"]

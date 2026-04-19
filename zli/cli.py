@@ -7,13 +7,13 @@ from typing import Optional
 import typer
 from rich.console import Console
 
-from msr.config import settings
-from msr.display.renderer import (
+from zli.config import settings
+from zli.display.renderer import (
     render_error,
     render_final,
     render_models_table,
 )
-from msr.schemas import (
+from zli.schemas import (
     ExecutionMode,
     FinalResponse,
     MSRState,
@@ -69,8 +69,8 @@ def ask(
     output_format: str = typer.Option("text", "--output-format", help="Output format: text | json | markdown."),
 ) -> None:
     """Send a query through the specialist router pipeline."""
-    from msr.graph.graph import graph
-    from msr.orchestrator.orchestrator import orchestrate
+    from zli.graph.graph import graph
+    from zli.orchestrator.orchestrator import orchestrate
 
     context: str | None = None
     if context_file:
@@ -232,15 +232,15 @@ def config_show() -> None:
             return "[dim]not set[/dim]"
         return val[:8] + "..." + val[-4:] if len(val) > 12 else "***"
 
-    console.print("\n[bold]Current MSR settings:[/bold]\n")
+    console.print("\n[bold]Current ZLI settings:[/bold]\n")
     console.print(f"  ANTHROPIC_API_KEY  : {mask(settings.anthropic_api_key)}")
     console.print(f"  OPENAI_API_KEY     : {mask(settings.openai_api_key)}")
     console.print(f"  GROQ_API_KEY       : {mask(settings.groq_api_key)}")
     console.print(f"  GEMINI_API_KEY     : {mask(settings.gemini_api_key)}")
     console.print(f"  PERPLEXITY_API_KEY : {mask(settings.perplexity_api_key)}")
     console.print(f"  XAI_API_KEY        : {mask(settings.xai_api_key)}")
-    console.print(f"\n  Timeout            : {settings.msr_default_timeout_s}s")
-    console.print(f"  Max retries        : {settings.msr_max_retries}")
+    console.print(f"\n  Timeout            : {settings.zli_default_timeout_s}s")
+    console.print(f"  Max retries        : {settings.zli_max_retries}")
     console.print(f"  Orchestrator model : {settings.planner_model}")
     console.print(f"  Verifier model     : {settings.verifier_model}")
     console.print(f"  Synthesizer model  : {settings.synthesizer_model}\n")

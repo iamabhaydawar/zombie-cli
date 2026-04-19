@@ -24,9 +24,9 @@ class Settings(BaseSettings):
     perplexity_api_key: str = ""
     xai_api_key: str = ""
 
-    msr_default_timeout_s: int = 30
-    msr_max_retries: int = 2
-    msr_log_level: str = "INFO"
+    zli_default_timeout_s: int = 30
+    zli_max_retries: int = 2
+    zli_log_level: str = "INFO"
 
     # Model assignments — primary + fallback per task type
     # Keys match TaskType enum values

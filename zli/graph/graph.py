@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from langgraph.graph import END, START, StateGraph
 
-from msr.graph.edges import after_orchestrate, after_verify
-from msr.graph.nodes import (
+from zli.graph.edges import after_orchestrate, after_verify
+from zli.graph.nodes import (
     dispatch_node,
     handle_error_node,
     orchestrate_node,
@@ -17,11 +17,11 @@ from msr.graph.nodes import (
     synthesize_node,
     verify_node,
 )
-from msr.schemas import MSRState
+from zli.schemas import MSRState
 
 
 def build_graph():
-    """Assemble and compile the MSR LangGraph StateGraph.
+    """Assemble and compile the ZLI LangGraph StateGraph.
 
     Architecture:
         START → orchestrate → dispatch → specialist_X (parallel/sequential)

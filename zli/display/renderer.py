@@ -6,7 +6,7 @@ from rich.panel import Panel
 from rich.table import Table
 from rich.text import Text
 
-from msr.schemas import FinalResponse, RoutedTask, ExecutionPlan, VerifiedOutput
+from zli.schemas import FinalResponse, RoutedTask, ExecutionPlan, VerifiedOutput
 
 console = Console()
 

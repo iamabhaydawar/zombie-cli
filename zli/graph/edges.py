@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from msr.schemas import ExecutionMode, MSRState, RoutedPlan, VerifiedOutput
+from zli.schemas import ExecutionMode, MSRState, RoutedPlan, VerifiedOutput
 
 
 def after_orchestrate(state: MSRState) -> str:

@@ -1,21 +1,9 @@
 
-```
- ______     ______     __    __     ______     __     ______    
-/\___  \   /\  __ \   /\ "-./  \   /\  == \   /\ \   /\  ___\   
-\/_/  /__  \ \ \/\ \  \ \ \-./\ \  \ \  __<   \ \ \  \ \  __\   
-  /\_____\  \ \_____\  \ \_\ \ \_\  \ \_____\  \ \_\  \ \_____\ 
-  \/_____/   \/_____/   \/_/  \/_/   \/_____/   \/_/   \/_____/ 
-                                                                  
-     ______     __         __    
-    /\  ___\   /\ \       /\ \   
-    \ \ \____  \ \ \____  \ \ \  
-     \ \_____\  \ \_____\  \ \_\ 
-      \/_____/   \/_____/   \/_/ 
-```
-
 <div align="center">
 
-# 🧟 ZOMBIE CLI
+<img src="assets/darker_background.png" alt="Zombie CLI" width="500"/>
+
+# ZOMBIE CLI
 
 ### *A thousand narrow specialists beat one generalist — always.*
 
@@ -24,7 +12,7 @@
 [![LangGraph](https://img.shields.io/badge/langgraph-execution_graph-orange?style=flat-square)](https://github.com/langchain-ai/langgraph)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow?style=flat-square)](LICENSE)
 
-**MSR · Model Specialist Router**
+**ZLI · Zombie Language Interface**
 
 </div>
 
@@ -32,7 +20,7 @@
 
 ## What Is This?
 
-Zombie CLI is a **multi-specialist AI routing engine** (MSR) that decomposes any user query into atomic subtasks, dispatches each to the world's best narrow model for that domain, cross-verifies the output, and synthesizes one clean final answer.
+Zombie CLI is a **multi-specialist AI routing engine** (ZLI) that decomposes any user query into atomic subtasks, dispatches each to the world's best narrow model for that domain, cross-verifies the output, and synthesizes one clean final answer.
 
 The pipeline that runs under the hood:
 
@@ -220,7 +208,7 @@ MSR_MAX_RETRIES=2               # verifier retry ceiling
 MSR_LOG_LEVEL=INFO
 ```
 
-The full model map is in `msr/config.py` — change any primary/fallback assignment there.
+The full model map is in `zli/config.py` — change any primary/fallback assignment there.
 
 ---
 

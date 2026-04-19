@@ -4,8 +4,8 @@ import time
 
 import litellm
 
-from msr.config import settings
-from msr.schemas import FinalResponse, TaskRequest, Verdict, VerifiedOutput
+from zli.config import settings
+from zli.schemas import FinalResponse, TaskRequest, Verdict, VerifiedOutput
 
 _SYSTEM = """\
 You are the final synthesis layer of a multi-specialist AI pipeline.
@@ -78,7 +78,7 @@ def synthesize(
                 {"role": "system", "content": _SYSTEM},
                 {"role": "user", "content": user_content},
             ],
-            timeout=settings.msr_default_timeout_s,
+            timeout=settings.zli_default_timeout_s,
         )
     except Exception:
         response = litellm.completion(
@@ -87,7 +87,7 @@ def synthesize(
                 {"role": "system", "content": _SYSTEM},
                 {"role": "user", "content": user_content},
             ],
-            timeout=settings.msr_default_timeout_s,
+            timeout=settings.zli_default_timeout_s,
         )
 
     answer = response.choices[0].message.content or ""

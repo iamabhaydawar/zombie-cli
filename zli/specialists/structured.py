@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from msr.schemas import SubTask, TaskType
-from msr.specialists.base import BaseSpecialist
+from zli.schemas import SubTask, TaskType
+from zli.specialists.base import BaseSpecialist
 
 
 class StructuredSpecialist(BaseSpecialist):

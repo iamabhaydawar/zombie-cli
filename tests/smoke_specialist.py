@@ -6,12 +6,12 @@ import sys
 sys.path.insert(0, ".")
 
 import argparse
-from msr.schemas import SubTask, TaskType
-from msr.specialists.code import CodeSpecialist
-from msr.specialists.math import MathSpecialist
-from msr.specialists.research import ResearchSpecialist
-from msr.specialists.summarize import SummarizeSpecialist
-from msr.specialists.structured import StructuredSpecialist
+from zli.schemas import SubTask, TaskType
+from zli.specialists.code import CodeSpecialist
+from zli.specialists.math import MathSpecialist
+from zli.specialists.research import ResearchSpecialist
+from zli.specialists.summarize import SummarizeSpecialist
+from zli.specialists.structured import StructuredSpecialist
 
 SPECIALISTS = {
     "code":       (CodeSpecialist(),       SubTask(task_type=TaskType.CODE,       prompt="Write a Python function that checks if a number is prime.")),

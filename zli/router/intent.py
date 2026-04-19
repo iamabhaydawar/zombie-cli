@@ -5,8 +5,8 @@ import time
 
 import litellm
 
-from msr.config import settings
-from msr.schemas import ComplexityLevel, RoutedTask, TaskRequest, TaskType
+from zli.config import settings
+from zli.schemas import ComplexityLevel, RoutedTask, TaskRequest, TaskType
 
 _SYSTEM = """\
 You are an intent router for a multi-model AI system.
@@ -54,7 +54,7 @@ def classify(request: TaskRequest) -> RoutedTask:
             {"role": "system", "content": _SYSTEM},
             {"role": "user", "content": user_content},
         ],
-        timeout=settings.msr_default_timeout_s,
+        timeout=settings.zli_default_timeout_s,
         temperature=0.0,
     )
     elapsed_ms = int((time.monotonic() - t0) * 1000)  # noqa: F841 — kept for future logging

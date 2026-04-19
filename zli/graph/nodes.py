@@ -4,8 +4,8 @@ from typing import Any
 
 from langgraph.types import Send
 
-from msr.orchestrator.orchestrator import orchestrate
-from msr.schemas import (
+from zli.orchestrator.orchestrator import orchestrate
+from zli.schemas import (
     ExecutionMode,
     FinalResponse,
     MSRState,
@@ -16,14 +16,14 @@ from msr.schemas import (
     TaskType,
     VerifiedOutput,
 )
-from msr.specialists.code import CodeSpecialist
-from msr.specialists.factcheck import FactCheckSpecialist
-from msr.specialists.math import MathSpecialist
-from msr.specialists.research import ResearchSpecialist
-from msr.specialists.structured import StructuredSpecialist
-from msr.specialists.summarize import SummarizeSpecialist
-from msr.synthesizer.synthesizer import synthesize
-from msr.verifier.verifier import verify
+from zli.specialists.code import CodeSpecialist
+from zli.specialists.factcheck import FactCheckSpecialist
+from zli.specialists.math import MathSpecialist
+from zli.specialists.research import ResearchSpecialist
+from zli.specialists.structured import StructuredSpecialist
+from zli.specialists.summarize import SummarizeSpecialist
+from zli.synthesizer.synthesizer import synthesize
+from zli.verifier.verifier import verify
 
 # ── Specialist registry ────────────────────────────────────────────────────────
 
@@ -159,7 +159,7 @@ def verify_node(state: MSRState) -> dict:
         vo = verify(output, retry_count=prev_retries)
         verified.append(vo.model_dump())
 
-        from msr.schemas import Verdict
+        from zli.schemas import Verdict
         if vo.verdict == Verdict.RETRY:
             retry_ids.append(output.subtask_id)
 

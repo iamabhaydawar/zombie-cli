@@ -4,8 +4,8 @@ Run: python tests/smoke_router.py
 import sys
 sys.path.insert(0, ".")
 
-from msr.router.intent import classify
-from msr.schemas import TaskRequest, TaskType
+from zli.router.intent import classify
+from zli.schemas import TaskRequest, TaskType
 
 TEST_CASES = [
     ("implement quicksort in Python",                   TaskType.CODE),

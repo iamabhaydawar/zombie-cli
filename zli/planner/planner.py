@@ -5,8 +5,8 @@ import time
 
 import litellm
 
-from msr.config import settings
-from msr.schemas import ComplexityLevel, ExecutionPlan, RoutedTask, SubTask, TaskType
+from zli.config import settings
+from zli.schemas import ComplexityLevel, ExecutionPlan, RoutedTask, SubTask, TaskType
 
 _SYSTEM = """\
 You are a task planner for a multi-specialist AI system.
@@ -75,7 +75,7 @@ def plan(routed: RoutedTask) -> ExecutionPlan:
             {"role": "system", "content": _SYSTEM},
             {"role": "user", "content": user_content},
         ],
-        timeout=settings.msr_default_timeout_s,
+        timeout=settings.zli_default_timeout_s,
         temperature=0.0,
     )
 

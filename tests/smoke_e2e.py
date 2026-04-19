@@ -5,8 +5,8 @@ import sys
 sys.path.insert(0, ".")
 
 import time
-from msr.graph.graph import graph
-from msr.schemas import FinalResponse, MSRState, TaskRequest
+from zli.graph.graph import graph
+from zli.schemas import FinalResponse, MSRState, TaskRequest
 
 TEST_QUERIES = [
     # (query, label)

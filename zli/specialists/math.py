@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from msr.schemas import TaskType
-from msr.specialists.base import BaseSpecialist
+from zli.schemas import TaskType
+from zli.specialists.base import BaseSpecialist
 
 
 class MathSpecialist(BaseSpecialist):

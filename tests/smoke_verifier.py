@@ -4,8 +4,8 @@ Run: python tests/smoke_verifier.py
 import sys
 sys.path.insert(0, ".")
 
-from msr.schemas import SpecialistOutput, TaskType, Verdict
-from msr.verifier.verifier import verify
+from zli.schemas import SpecialistOutput, TaskType, Verdict
+from zli.verifier.verifier import verify
 
 GOOD_CODE = """\
 def is_prime(n: int) -> bool:

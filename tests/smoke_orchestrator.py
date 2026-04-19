@@ -4,8 +4,8 @@ Run: python tests/smoke_orchestrator.py
 import sys
 sys.path.insert(0, ".")
 
-from msr.orchestrator.orchestrator import orchestrate
-from msr.schemas import ExecutionMode, TaskRequest, TaskType
+from zli.orchestrator.orchestrator import orchestrate
+from zli.schemas import ExecutionMode, TaskRequest, TaskType
 
 TEST_CASES = [
     # (query, expected_mode, min_subtasks, description)

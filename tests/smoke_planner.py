@@ -4,8 +4,8 @@ Run: python tests/smoke_planner.py
 import sys
 sys.path.insert(0, ".")
 
-from msr.planner.planner import plan
-from msr.schemas import ComplexityLevel, RoutedTask, TaskRequest, TaskType
+from zli.planner.planner import plan
+from zli.schemas import ComplexityLevel, RoutedTask, TaskRequest, TaskType
 
 TEST_CASES = [
     # (query, task_type, complexity, expected_min_subtasks)

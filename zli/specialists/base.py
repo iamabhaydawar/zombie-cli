@@ -6,8 +6,8 @@ from abc import ABC, abstractmethod
 import litellm
 from litellm.exceptions import APIConnectionError, APIError, Timeout
 
-from msr.config import settings
-from msr.schemas import SpecialistOutput, SubTask, TaskType
+from zli.config import settings
+from zli.schemas import SpecialistOutput, SubTask, TaskType
 
 
 class BaseSpecialist(ABC):
@@ -37,7 +37,7 @@ class BaseSpecialist(ABC):
         response = litellm.completion(
             model=model,
             messages=messages,
-            timeout=settings.msr_default_timeout_s,
+            timeout=settings.zli_default_timeout_s,
             **kwargs,
         )
         content = response.choices[0].message.content or ""

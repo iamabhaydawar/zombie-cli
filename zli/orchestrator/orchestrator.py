@@ -4,8 +4,8 @@ import json
 
 import litellm
 
-from msr.config import settings
-from msr.schemas import ExecutionMode, RoutedPlan, SubTask, TaskRequest, TaskType
+from zli.config import settings
+from zli.schemas import ExecutionMode, RoutedPlan, SubTask, TaskRequest, TaskType
 
 # ── System prompt ──────────────────────────────────────────────────────────────
 
@@ -92,7 +92,7 @@ def orchestrate(request: TaskRequest) -> RoutedPlan:
                 {"role": "system", "content": _SYSTEM},
                 {"role": "user",   "content": user_content},
             ],
-            timeout=settings.msr_default_timeout_s,
+            timeout=settings.zli_default_timeout_s,
             temperature=0.0,
         )
     except Exception:
@@ -102,7 +102,7 @@ def orchestrate(request: TaskRequest) -> RoutedPlan:
                 {"role": "system", "content": _SYSTEM},
                 {"role": "user",   "content": user_content},
             ],
-            timeout=settings.msr_default_timeout_s,
+            timeout=settings.zli_default_timeout_s,
             temperature=0.0,
         )
 

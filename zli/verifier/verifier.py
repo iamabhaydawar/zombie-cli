@@ -4,8 +4,8 @@ import json
 
 import litellm
 
-from msr.config import settings
-from msr.schemas import SpecialistOutput, TaskType, Verdict, VerifiedOutput
+from zli.config import settings
+from zli.schemas import SpecialistOutput, TaskType, Verdict, VerifiedOutput
 
 _SYSTEM = """\
 You are a strict output verifier for an AI pipeline. A specialist model has produced an answer.
@@ -66,7 +66,7 @@ def verify(output: SpecialistOutput, retry_count: int = 0) -> VerifiedOutput:
             {"role": "system", "content": _SYSTEM},
             {"role": "user", "content": user_content},
         ],
-        timeout=settings.msr_default_timeout_s,
+        timeout=settings.zli_default_timeout_s,
         temperature=0.0,
     )
 
@@ -81,7 +81,7 @@ def verify(output: SpecialistOutput, retry_count: int = 0) -> VerifiedOutput:
     verdict = Verdict(data["verdict"])
 
     # Enforce circuit breaker: after 2 retries, downgrade RETRY to FAIL
-    if verdict == Verdict.RETRY and retry_count >= settings.msr_max_retries:
+    if verdict == Verdict.RETRY and retry_count >= settings.zli_max_retries:
         verdict = Verdict.FAIL
 
     return VerifiedOutput(
