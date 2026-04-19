@@ -107,7 +107,7 @@ zli models list       # show task_type → model assignments
 ## Architecture
 
 ```
-D:\msr\
+zli
 ├── msr/
 │   ├── config.py               # pydantic-settings; reads .env, syncs to os.environ
 │   ├── schemas.py              # all shared Pydantic models (TaskRequest → FinalResponse)
