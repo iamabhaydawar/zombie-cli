@@ -12,7 +12,7 @@
 [![LangGraph](https://img.shields.io/badge/langgraph-execution_graph-orange?style=flat-square)](https://github.com/langchain-ai/langgraph)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow?style=flat-square)](LICENSE)
 
-**ZLI · Zombie Language Interface**
+
 
 </div>
 
